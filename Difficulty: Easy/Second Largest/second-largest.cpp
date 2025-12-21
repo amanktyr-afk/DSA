@@ -11,7 +11,6 @@ class Solution {
                 index=i;
             }
         }
-        arr[index]=0;
         for(int i=0;i<n;i++)
         {
             if(sm<arr[i]&&arr[i]!=m)
