@@ -1,31 +1,24 @@
 class Solution {
 public:
-    void permutation(vector<int>&nums,vector<vector<int>>&ans,vector<int>&visited,vector<int>&temp)
+   //auxiliary space O(1) solution
+    void permutation(vector<int>&nums,vector<vector<int>>&ans,int index)
     {  
-         if(temp.size()==visited.size())
+      if(index==nums.size())
        {
-         ans.push_back(temp);
-         return ;
+        ans.push_back(nums);
+        return;
        }
-
-       for(int i=0;i<visited.size();i++)
+       for(int i=index;i<nums.size();i++)
        {
-         if(visited[i]==0)
-         {
-            visited[i]=1;
-             temp.push_back(nums[i]);
-            permutation(nums,ans,visited,temp);
-            visited[i]=0;
-            temp.pop_back();
-         }   
+           swap(nums[i],nums[index]);
+           permutation(nums,ans,index+1);
+           swap(nums[i],nums[index]);
        }
-    }
+    }   
     vector<vector<int>> permute(vector<int>& nums)
-    {   int n=nums.size(),index=0;
-       vector<vector<int>> ans;
-       vector<int> visited(n,0);
-       vector<int> temp;              // if we'll define temp size it;s error
-       permutation(nums,ans,visited,temp); 
+    {   int n=nums.size(), index=0;
+       vector<vector<int>> ans;     
+       permutation(nums,ans,index); 
        return ans; 
     }
 };
