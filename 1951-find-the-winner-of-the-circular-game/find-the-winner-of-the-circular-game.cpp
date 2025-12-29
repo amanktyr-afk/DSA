@@ -1,30 +1,14 @@
 class Solution {
 public:
- int winner(int n,int k,vector<bool>&person,int index,int personleft)
- {   
-    if(personleft==1)
-    {
-        for(int i=0;i<n;i++)
-        {
-            if(person[i]==0)
-            return i+1;
-        }
-    }
-     int kill=(k-1)%personleft;
-     while(kill--)             
-     {
-        index=(index+1)%n;
-         while(person[index]==1)    //skipping killed persons
-          index=(index+1)%n;
-     }
-     person[index]=1;         // killing person
-    while(person[index]==1)   // finding next starting point 
-    index=(index+1)%n;
-    return winner(n,k,person,index,personleft-1);
+// time O(n), no extra array space 
+ int winner(int n,int k)
+ {
+    if(n==1)
+    return 0;
+    return (winner(n-1,k)+k)%n;
  }
  int findTheWinner(int n, int k)
-    {   int index=0,personleft=n;
-       vector<bool>person(500,0);
-       return  winner( n, k,person,index,personleft);
+    {    
+      return winner(n,k)+1;
     }
 };
