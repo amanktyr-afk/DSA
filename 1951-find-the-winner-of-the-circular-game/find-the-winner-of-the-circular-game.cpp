@@ -7,7 +7,7 @@ public:
         for(int i=0;i<n;i++)
         {
             if(person[i]==0)
-            return i;
+            return i+1;
         }
     }
      int kill=(k-1)%personleft;
@@ -25,6 +25,6 @@ public:
  int findTheWinner(int n, int k)
     {   int index=0,personleft=n;
        vector<bool>person(500,0);
-       return  winner( n, k,person,index,personleft)+1;
+       return  winner( n, k,person,index,personleft);
     }
 };
