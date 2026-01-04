@@ -7,8 +7,6 @@ public:
         int first=0,last=n-1,count=0,i=0;
         while(first<last)
         {
-          if(n==0)
-          return 0;
           if(nums[first]!=val)
           first++;
           else if(nums[first]==val&&nums[last]==val)
