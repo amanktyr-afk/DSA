@@ -11,22 +11,15 @@ public:
                 nums[i+1]=0;
             }
         }
-        int first=0,sec=1;
-        while(sec<n)
+        int j=0;
+        for(int i=0;i<n;i++)
         {
-            if(nums[first]!=0)
-           {first++;sec++;}
-            else if(nums[first]==0&&nums[sec]==0)
+            if(nums[i]!=0)
             {
-                sec++;
+                swap(nums[i],nums[j]);
+                j++;
             }
-            else
-            {
-                swap(nums[first],nums[sec]);
-                first++;sec++;
-            }
-
-        }
+        }       
         return nums;
     }
 };
