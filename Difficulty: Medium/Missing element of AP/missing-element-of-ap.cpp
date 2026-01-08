@@ -1,5 +1,4 @@
 // User function template for C++
-
 class Solution {
   public:
     int findMissing(vector<int> &arr)
