@@ -16,12 +16,11 @@ public:
         return head;
          ListNode*ptr=head;
          vector<int>v;
-        while(ptr->next!=nullptr)
+        while(ptr!=nullptr)
          {
            v.push_back(ptr->val);
            ptr=ptr->next;
          }
-          v.push_back(ptr->val);
          int n=v.size();
          ptr=head;
          for(int i=n-1;i>=0;i--)
