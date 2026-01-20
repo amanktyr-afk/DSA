@@ -21,11 +21,12 @@ public:
            v.push_back(ptr->val);
            ptr=ptr->next;
          }
-         int n=v.size();
+         int i=v.size()-1;
          ptr=head;
-         for(int i=n-1;i>=0;i--)
+         while(ptr)
          {
             ptr->val=v[i];
+            i--;
             ptr=ptr->next;
          }
          return head;
