@@ -10,25 +10,18 @@
  */
 class Solution {
 public:
+// node reversal
     ListNode* reverseList(ListNode* head) 
     {
-        if(head==nullptr||head->next==nullptr)
-        return head;
-         ListNode*ptr=head;
-         vector<int>v;
-        while(ptr!=nullptr)
-         {
-           v.push_back(ptr->val);
-           ptr=ptr->next;
-         }
-         int i=v.size()-1;
-         ptr=head;
-         while(ptr)
-         {
-            ptr->val=v[i];
-            i--;
-            ptr=ptr->next;
-         }
-         return head;
+       ListNode*curr=head,*prev=nullptr,*fut=nullptr;
+       while(curr)
+       {
+         fut=curr->next;
+         curr->next=prev;
+         prev=curr;
+         curr=fut;
+       }
+       return prev;   // 
+       
     }
 };
