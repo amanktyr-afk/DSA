@@ -10,18 +10,18 @@
  */
 class Solution {
 public:
-// node reversal
+// node reversal using recursion
+    ListNode* reverse(ListNode*curr,ListNode*prev)
+   {
+    if(curr==nullptr)
+      return prev;
+    ListNode*fut=curr->next;
+    curr->next=prev;
+     return reverse(fut,curr);
+   }
     ListNode* reverseList(ListNode* head) 
     {
-       ListNode*curr=head,*prev=nullptr,*fut=nullptr;
-       while(curr)
-       {
-         fut=curr->next;
-         curr->next=prev;
-         prev=curr;
-         curr=fut;
-       }
-       return prev;   // 
-       
+       ListNode*curr=head,*prev=nullptr;
+       return  reverse(curr,prev);
     }
 };
