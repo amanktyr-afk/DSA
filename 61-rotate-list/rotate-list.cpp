@@ -27,11 +27,10 @@ public:
         ListNode *last=p,*prev=nullptr; 
         p=head;
         int step=count-k;
-        while(step)
+        while(step--)
         {  
             prev=p;
             p=p->next;
-            step--;
         }
         ListNode*newhead=p;
         last->next=head;
