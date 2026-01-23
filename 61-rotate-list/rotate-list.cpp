@@ -22,7 +22,7 @@ public:
             count++;
         }
          k=k%count;
-        if(k==0||k==count)
+        if(k==0)
         return head;
         ListNode *last=p,*prev=nullptr; 
         p=head;
