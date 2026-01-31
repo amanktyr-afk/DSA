@@ -14,19 +14,30 @@ class Solution {
   public:
     void removeLoop(Node* head) 
     {
-      Node*curr=head;
-      Node*prev=nullptr;
-      unordered_map<Node*,bool> visit;
-      while(curr)
+      Node*slow=head;
+      Node*fast=head;
+      while(fast&&fast->next)
       {
-          if(visit[curr]==1)
-          {
-              prev->next=nullptr;
-              return ;
-          }
-          visit[curr]=1;
-          prev=curr;
-          curr=curr->next;
+          slow=slow->next;
+          fast=fast->next->next;
+          if(fast==slow)
+          break;
       }
+      //if  no loop present 
+      if(fast==nullptr||fast->next==nullptr)
+      return;
+     // if condn not meet means there is loop
+      slow=head;
+      while(slow!=fast)
+      {
+          slow=slow->next;
+          fast=fast->next;
+      }
+      while(slow->next!=fast)
+      {
+          slow=slow->next;
+      }
+      slow->next=nullptr;
+      
     }
 };
