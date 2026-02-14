@@ -40,14 +40,21 @@ class Solution {
         tail->next=head2;
         return temp->next;
    }
+      void mergesort(vector<Node*>&arr,int start,int end)
+    {
+        if(start>=end)
+        return;
+        int mid=start+(end-start)/2;
+        mergesort(arr,start,mid);
+        mergesort(arr,mid+1,end);
+        arr[start]=merge(arr[start],arr[mid+1]);
+    }
     Node* mergeKLists(vector<Node*>& arr) 
     {
       int k=arr.size();
-      Node* head=arr[0];
-      for(int i=1;i<k;i++)
-      {
-          head=merge(head,arr[i]);
-      }
-      return head;
+      int start=0;
+      int end=k-1;
+      mergesort(arr,start,end);
+      return arr[start];
     }
 };
