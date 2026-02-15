@@ -3,9 +3,7 @@ class Solution {
     bool pythagoreanTriplet(vector<int>& arr) 
     {
        int n=arr.size();
-       int maxele=0;
-       for(int i=0;i<n;i++)
-        maxele=max(maxele,arr[i]);
+        int maxele=*max_element(arr.begin(),arr.end());
       vector<bool>visited(maxele+1,0);
       for(int i=0;i<n;i++)
         visited[arr[i]]=1;  
