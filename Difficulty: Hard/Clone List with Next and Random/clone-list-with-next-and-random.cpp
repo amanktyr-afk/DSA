@@ -12,20 +12,9 @@ class Node {
     }
 };
 */
-
+// O(n)time & O(1)space soln
 class Solution {
   public:
-    Node* find(Node* cur1,Node* cur2,Node* x)
-    {  
-        if(x==NULL)
-        return NULL;
-        while(cur1!=x)
-        {
-            cur1=cur1->next;
-            cur2=cur2->next;
-        }
-        return cur2;
-    }
     Node* cloneLinkedList(Node* head)
     {
       Node* headcopy=new Node(0);//dummy node
@@ -41,14 +30,34 @@ class Solution {
       tailcopy=headcopy;
       headcopy=headcopy->next;
       delete tailcopy;
-      temp=head;
-      tailcopy=headcopy;
-      while(temp)
+      Node* curr1=head,*curr2=headcopy;
+      Node* fut1,*fut2;
+      //linking copy nodes just next to real nodes
+      while(curr1)
       {
-         tailcopy->random=find(head,headcopy,temp->random);
-         tailcopy=tailcopy->next;
-         temp=temp->next;
-         
+        fut1=curr1->next;
+        fut2=curr2->next;
+        curr1->next=curr2;
+        curr2->next=fut1;
+        curr1=fut1;
+        curr2=fut2;
+      }
+      //assigning random pointers
+      curr1=head;
+      while(curr1)
+      {
+        curr2=curr1->next;
+        if(curr1->random)
+        curr2->random=curr1->random->next;
+        curr1=curr2->next; 
+      }
+      //seperating real and copy LLs
+      curr1=head;
+      while(curr1->next)
+      {
+          fut1=curr1->next;
+          curr1->next=fut1->next;
+          curr1=fut1;
       }
       return headcopy;
     }
