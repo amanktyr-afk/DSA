@@ -5,8 +5,7 @@ public:
        int n=nums.size();
        int i=n-1;
        while(i>0)
-       {  
-          
+       {   
           if(nums[i-1]<nums[i])
           { 
             int minele=INT_MAX,index=-1;
@@ -24,7 +23,7 @@ public:
           }
           i--;
        } 
-//edge case when alllexo permutation end comes at permutation
+//edge case when all the permutation end comes at first permutation
        if(i==0)
           {
             sort(nums.begin(),nums.end());
