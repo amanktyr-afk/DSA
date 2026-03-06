@@ -4,6 +4,8 @@ public:
     {
        vector<int>mark(n,1);
        int count=0;
+       if(n<=2)
+        return 0;
        for(int i=2;i<n;i++)
        {
          mark[i]=1;
