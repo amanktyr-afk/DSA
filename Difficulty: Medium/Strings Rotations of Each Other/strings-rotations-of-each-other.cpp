@@ -1,3 +1,4 @@
+
 class Solution {
   public:
      void lpsfind(vector<int>&lps,string&s2)
@@ -18,9 +19,7 @@ class Solution {
                   suf++;
               }
               else
-              {
-                 pre=lps[pre-1];
-              }
+               pre=lps[pre-1];
            }
          }
      }
