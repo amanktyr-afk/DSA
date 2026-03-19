@@ -5,7 +5,7 @@ class Solution {
     vector<string> generateCode(int N)
     {
       vector<string>ans;
-      for(int i=0;i^(1<<N);i++)
+      for(int i=0;i<(1<<N);i++)
       {
          int gray=i^(i>>1);
          string s="";
