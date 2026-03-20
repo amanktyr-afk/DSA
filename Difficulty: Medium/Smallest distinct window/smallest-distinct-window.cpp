@@ -27,7 +27,7 @@ class Solution {
                len=min(len,sec-first);
                count[str[first]]--;
                if(count[str[first]]==0)
-               diff++;
+               diff++;      
                first++;
                
            }
