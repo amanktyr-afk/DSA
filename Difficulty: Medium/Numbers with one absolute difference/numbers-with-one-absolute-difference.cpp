@@ -1,20 +1,22 @@
 class Solution {
 public:
+//by using vector not queue
     vector<long long> absDifOne(long long N) {
         vector<long long> ans;
-
+        
         if(N <= 9) return {-1};
 
-        queue<long long> q;
+        vector<long long> v;
 
         // start from 1 to 9
         for(int i = 1; i <= 9; i++) {
-            q.push(i);
+            v.push_back(i);
         }
 
-        while(!q.empty()) {
-            long long num = q.front();
-            q.pop();
+        int idx = 0;
+
+        while(idx < v.size()) {
+            long long num = v[idx++];   // like pop from queue
 
             if(num > N) continue;
 
@@ -22,16 +24,16 @@ public:
 
             int last = num % 10;
 
+            // generate next numbers
             if(last > 0)
-                q.push(num * 10 + (last - 1));
+                v.push_back(num * 10 + (last - 1));
 
             if(last < 9)
-                q.push(num * 10 + (last + 1));
+                v.push_back(num * 10 + (last + 1));
         }
 
         sort(ans.begin(), ans.end());
 
-        if(ans.empty()) return {-1};
-        return ans;
+        return ans.empty() ? vector<long long>{-1} : ans;
     }
 };
