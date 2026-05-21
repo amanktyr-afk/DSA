@@ -1,3 +1,4 @@
+
 // User function template for C++
 class Solution {
   public:
@@ -9,7 +10,7 @@ class Solution {
       while(start<=end)
       {
          int mid=end+(start-end)/2;
-         if(arr[mid]>=arr[abs(mid-1)%n] && arr[mid]>=arr[(mid+1)%n])
+         if(arr[mid]>=arr[abs(mid-1)] && arr[mid]>=arr[(mid+1)])
          {
              return arr[mid];
          }
