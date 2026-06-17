@@ -6,6 +6,7 @@ class Solution {
       for(int i=0;i<n;i++)
       {
          while(arr[i]>0 && arr[i]<=n&& arr[i]!=arr[arr[i]-1])
+    //after swapping that arr[i] will again check that is why we r using while
          {
             swap(arr[i],arr[arr[i]-1]);
          }
