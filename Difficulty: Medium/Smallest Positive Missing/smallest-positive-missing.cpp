@@ -7,6 +7,10 @@ class Solution {
       {
          while(arr[i]>0 && arr[i]<=n&& arr[i]!=arr[arr[i]-1])
     //after swapping that arr[i] will again check that is why we r using while
+    //Because the inner loop doesn't restart from scratch for every i;
+    //every swap permanently places an element in its correct position
+    //so the total number of inner-loop executions over the entire array is at most O(n).
+    //Therefore the overall complexity is O(n).
          {
             swap(arr[i],arr[arr[i]-1]);
          }
