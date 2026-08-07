@@ -27,7 +27,7 @@ public:
             freq[balance]++;
         }
         balance=0;
-        long long ans=freq[0]+freq[1];
+        int ans=freq[0]+freq[1];
         // left side managing by balancing with right side  by map
         for(int i=pos-1;i>=0;i--)
         {
