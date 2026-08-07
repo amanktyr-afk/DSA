@@ -15,7 +15,7 @@ public:
         }
         unordered_map<int,int> freq;
         int balance=0;
-        freq[0]=1;// for that median m becz m-m=0 ,median will exist sure
+        freq[0]=1;// for that median m becz k-k=0 ,median will exist sure
         //right side managing by freq map
         for(int i=pos+1;i<n;i++)
         {
