@@ -51,9 +51,7 @@ public:
             ans = max(ans, cs(revhead, head) * 2);
 
             // Odd length palindrome
-            if (head) {
                 ans = max(ans, cs(revhead->next, head) * 2 + 1);
-            }
         }
 
         return ans;
