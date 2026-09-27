@@ -3,7 +3,6 @@ public:
 // O(1) space soln ,without stack
     int minAddToMakeValid(string s)
     {
-      stack<char> st;
       int left=0;
       int right=0;
       for(int i=0;i<s.size();i++)
