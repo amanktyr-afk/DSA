@@ -1,6 +1,7 @@
 class Solution {
 public:
-  // O(n) space 
+// we can do it in O(1) space by 2 pointer 
+  // but doing O(n) space becz using stack  
     void reverseString(vector<char>& s) 
     {
        stack<char> st;
