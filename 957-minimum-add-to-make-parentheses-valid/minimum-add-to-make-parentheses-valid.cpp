@@ -1,23 +1,25 @@
 class Solution {
 public:
+// O(1) space soln ,without stack
     int minAddToMakeValid(string s)
     {
       stack<char> st;
-      int count=0;
+      int left=0;
+      int right=0;
       for(int i=0;i<s.size();i++)
       {
         if(s[i]=='(')
-        st.push(s[i]);
+        left++;
         else
         {
-            if(st.empty())
+            if(left==0)
             {
-               count++;
+               right++;
             }
             else
-            st.pop();
+            left--;
         }
       }
-      return st.size()+count;
+      return left+right;
     }
 };
