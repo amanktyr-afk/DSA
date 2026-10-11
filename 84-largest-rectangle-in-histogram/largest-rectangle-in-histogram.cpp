@@ -28,8 +28,8 @@ public:
      int ans=0;
      for(int i=0;i<n;i++)
      {
-       int temp=heights[i]*(NSR[i]-NSL[i]-1);
-       ans=max(ans,temp);
+       int area=heights[i]*(NSR[i]-NSL[i]-1);
+       ans=max(ans,area);
      }
       return ans ;
     }
