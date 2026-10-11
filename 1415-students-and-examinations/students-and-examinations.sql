@@ -7,3 +7,5 @@ from ( select std.student_id,std.student_name,sub.subject_name
  and jt.subject_name = ex.subject_name
  group by jt.student_id,jt.student_name,jt.subject_name
  order by jt.student_id,jt.student_name
+
+--  in this query, you should use AND inside the ON clause, not WHERE, because you are using a LEFT JOIN and need to preserve students who attended zero exams.
