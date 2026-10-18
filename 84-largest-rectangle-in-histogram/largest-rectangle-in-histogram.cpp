@@ -15,7 +15,7 @@ public:
         if(!st.empty())
         area=max(area,(heights[prev]*(i-st.top()-1)));
         else
-        area=max(area,heights[prev]*i);
+        area=max(area,heights[prev]*(i-(-1)-1));// if empty stack the top=-1
        }
        st.push(i);
      }
@@ -26,7 +26,7 @@ public:
         if(!st.empty())
         area=max(area,(heights[prev]*(n-st.top()-1)));
         else
-        area=max(area,heights[prev]*n);
+        area=max(area,heights[prev]*(n-(-1)-1));
      }
      return area;
     }
