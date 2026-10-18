@@ -39,7 +39,7 @@ public:
       {
         for(int j=0;j<col;j++)
         { 
-          if(matrix[i][j]=='0')// gien 0,1 in string form
+          if(matrix[i][j]=='0')// given 0,1 in string form
            height[j]=0;
            else
            height[j]+=1;
