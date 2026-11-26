@@ -1,6 +1,6 @@
 # Write your MySQL query statement below
 select jt.student_id,jt.student_name,jt.subject_name,count(ex.subject_name) as  attended_exams
-from ( select std.student_id,std.student_name,sub.subject_name
+from ( select *
       from Students as std  join Subjects as sub) as jt
  left join Examinations as ex
  on jt.student_id = ex.student_id 
